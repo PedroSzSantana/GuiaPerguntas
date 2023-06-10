@@ -1,5 +1,4 @@
 const { Router } = require("express")
-const RoutePages = Router()
 const QuestionModel = require('../models/Questions')
 const ResponseModel = require('../models/Answers')
 
