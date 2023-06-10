@@ -1,6 +1,10 @@
+const { configDotenv } = require('dotenv')
 const Sequelize = require('sequelize')
+configDotenv()
 
-const connection = new Sequelize('guiaperguntas', 'root', 'longaoh123',{
+const Pass = process.env.PASS_MYSQL
+
+const connection = new Sequelize('guiaperguntas', 'root', Pass,{
   host:'localhost',
   dialect:'mysql'
 })
