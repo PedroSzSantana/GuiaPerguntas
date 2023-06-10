@@ -17,12 +17,11 @@
     </form>
 
     <div>
+      <hr>
+      <h3>Respostas:</h3>
       <br>
       <% Answers.forEach(item =>{ %>
         <div class="card">
-          <div class="card-header">
-            <h3>Resposta: <%= item.id %></h3>
-          </div>
           <div class="card-body">
             <p><%= item.body %></p>
           </div>

@@ -15,18 +15,7 @@ RoutePages.get("/",async(req, res)=>{
 RoutePages.get("/pergunta",(req, res)=>{
   res.render("perguntar")
 });
-RoutePages.post("/salvarpergunta",(req, res)=>{
-  const titulo = req.body.titulo
-  const descricao  = req.body.descricao
-  try {
-    QuestionModel.create({
-      titulo,descricao
-    })
-    res.redirect('/')
-  } catch (error) {
-    console.log(error)
-  }
-})
+
 RoutePages.get('/pergunta/:id',async(req,res)=>{
   try {
     const id = req.params.id
@@ -42,19 +31,6 @@ RoutePages.get('/pergunta/:id',async(req,res)=>{
     }else{
       res.redirect('/')
     }
-  } catch (error) {
-    
-  }
-})
-RoutePages.post("/responder",async(req,res)=>{
-  try {
-    console.log('Rota Resposta')
-    const body = req.body.body
-    const questionId = req.body.questionId
-  
-    await ResponseModel.create({body,questionId});
-    console.log(body,questionId)
-    res.redirect("/pergunta/"+questionId);
   } catch (error) {
     console.log(error)
   }
